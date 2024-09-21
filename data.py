@@ -25,7 +25,7 @@ def _get_data(data_size, set_size, data_dim,batch_size, device):
     x = torch.randn((data_size, set_size, data_dim))
     x[data_size//2:] = x[data_size//2:] * np.sqrt(0.8)
     y = torch.ones(data_size)
-    y[data_size // 2:] = -1
+    y[data_size // 2:] = 0
     dataset = TensorDataset(x.to(device), y.to(device))
     data_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
     return data_loader

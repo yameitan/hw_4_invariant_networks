@@ -1,0 +1,33 @@
+program: main.py
+project: hw_4_invariant_networks
+
+method: grid
+parameters:
+  architecture.model_type:
+    values:
+      - CanonizationNetwrok
+      - SymmetrizationNetwork
+      - SampledSymmetrizationNetwork
+      - InvariantLinearlNetwork
+      - AugmentationNetwork
+  data.set_size:
+    values:
+      - 10
+      - 100
+  data.train_size:
+    values:
+      - 100
+      - 1000
+      - 10000
+      - 100000
+  data.data_dim:
+    values:
+      - 5
+      - 50
+
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - ${args_no_hyphens}

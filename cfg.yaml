@@ -1,30 +1,30 @@
 #general
-run_type: test
+run_type: train
 device: cpu
 seed: 1
 
 # Wandb
 wandb:
-  project_name: hw4_invariant_nns
+  project_name: hw_4_invariant_networks
   prefix: sweep
   log: False
 
 data:
   train_size: 1000
-  test_size: 100
+  test_size: 1000
   set_size: 3
   data_dim: 5
   output_dim: 1
 
 architecture:
   model_type: InvariantLinearlNetwork
-  hidden_dim: 128
-  num_layers: 4
+  hidden_dim: 64
+  num_layers: 3
 
 training:
   batch_size: 128
   lr: 0.001
-  epochs: 1
+  epochs: 100
   eval_every: 100
   oot: 30
 
