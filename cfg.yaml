@@ -7,7 +7,7 @@ seed: 1
 wandb:
   project_name: hw_4_invariant_networks
   prefix: sweep
-  log: False
+  log: True
 
 data:
   train_size: 1000
