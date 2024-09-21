@@ -6,10 +6,10 @@ parameters:
   architecture.model_type:
     values:
       - CanonizationNetwrok
-      - SymmetrizationNetwork
-      - SampledSymmetrizationNetwork
       - InvariantLinearlNetwork
       - AugmentationNetwork
+      - SampledSymmetrizationNetwork
+      - SymmetrizationNetwork
   data.set_size:
     values:
       - 10
