@@ -17,7 +17,7 @@ data:
   output_dim: 1
 
 architecture:
-  model_type: InvariantLinearlNetwork
+  model_type: AugmentationNetwork
   hidden_dim: 64
   num_layers: 3
 
