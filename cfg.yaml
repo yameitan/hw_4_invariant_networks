@@ -1,0 +1,33 @@
+#general
+run_type: test
+device: cpu
+seed: 1
+
+# Wandb
+wandb:
+  project_name: hw4_invariant_nns
+  prefix: sweep
+  log: False
+
+data:
+  train_size: 1000
+  test_size: 100
+  set_size: 3
+  data_dim: 5
+  output_dim: 1
+
+architecture:
+  model_type: SymmetrizationNetwork
+  hidden_dim: 128
+  num_layers: 4
+
+training:
+  batch_size: 128
+  lr: 0.001
+  epochs: 1
+  eval_every: 100
+  oot: 30
+
+
+
+

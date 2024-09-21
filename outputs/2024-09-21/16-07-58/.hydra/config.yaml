@@ -1,0 +1,23 @@
+run_type: test
+device: cpu
+seed: 1
+wandb:
+  project_name: hw4_invariant_nns
+  prefix: sweep
+  log: false
+data:
+  train_size: 1000
+  test_size: 100
+  set_size: 10
+  data_dim: 5
+  output_dim: 1
+architecture:
+  model_type: CanonizationNetwrok
+  hidden_dim: 128
+  num_layers: 4
+training:
+  batch_size: 128
+  lr: 0.001
+  epochs: 1
+  eval_every: 100
+  oot: 30
