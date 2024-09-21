@@ -7,8 +7,6 @@ from models import get_model
 from train_and_evaluate import train_and_evaluate
 
 
-
-
 @hydra.main(config_path=".", config_name="cfg", version_base=None)
 def main(cfg):
     torch.set_default_dtype(torch.float64)
@@ -19,8 +17,10 @@ def main(cfg):
                                                data_dim=cfg.data.data_dim,
                                                batch_size= cfg.training.batch_size,
                                                device=cfg.device)
+
+    input_dim = cfg.data.data_dim  if cfg.architecture.model_type=='InvariantLinearlNetwork' else cfg.data.data_dim * cfg.data.set_size
     model = get_model(model_type=cfg.architecture.model_type,
-                      input_dim=cfg.data.data_dim * cfg.data.set_size,
+                      input_dim=input_dim,
                       hidden_dim=cfg.architecture.hidden_dim,
                       output_dim=cfg.data.output_dim,
                       num_layers=cfg.architecture.num_layers,
@@ -42,13 +42,11 @@ def main(cfg):
                            model_type=cfg.architecture.model_type,
                            log_wandb= cfg.wandb.log)
 
-
     if cfg.run_type == 'extract_from_wandb':
         pass
 
-
     elif cfg.run_type == 'test':
-        test_invariance(model)
+        test_invariance(model=model, set_size=cfg.data.set_size, data_dim=cfg.data.data_dim)
 
 
 if __name__ == '__main__':

@@ -81,7 +81,8 @@ class SampledSymmetrizationNetwork(nn.Module):
     def forward(self, x):
         set_size = x.shape[1]
         outputs = []
-        for i in range(set_size//self.sample_factor):
+        num_samples = max(1, set_size//self.sample_factor)
+        for i in range(num_samples):
             permuted_indices = torch.randperm(set_size)
             outputs.append(self.mlp(x[:, permuted_indices, :]))
         outputs = torch.stack(outputs)
