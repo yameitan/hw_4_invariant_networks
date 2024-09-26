@@ -1,5 +1,6 @@
 program: main.py
 project: hw_4_invariant_networks
+name: first_sweep
 
 method: grid
 parameters:

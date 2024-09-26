@@ -1,6 +1,6 @@
 #general
 run_type: train
-device: cuda
+device: cpu
 seed: 1
 
 # Wandb

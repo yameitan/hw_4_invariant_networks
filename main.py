@@ -42,9 +42,6 @@ def main(cfg):
                            model_type=cfg.architecture.model_type,
                            log_wandb= cfg.wandb.log)
 
-    if cfg.run_type == 'extract_from_wandb':
-        pass
-
     elif cfg.run_type == 'test':
         test_invariance(model=model, set_size=cfg.data.set_size, data_dim=cfg.data.data_dim)
 
