@@ -25,7 +25,7 @@ def main(cfg):
                       output_dim=cfg.data.output_dim,
                       num_layers=cfg.architecture.num_layers,
                       device=cfg.device)
-
+    print(model)
     if cfg.wandb.log:
         wandb.init(
             settings=wandb.Settings(start_method="thread"),

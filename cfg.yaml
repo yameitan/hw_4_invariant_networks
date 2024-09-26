@@ -7,24 +7,24 @@ seed: 1
 wandb:
   project_name: hw_4_invariant_networks
   prefix: sweep
-  log: True
+  log: False
 
 data:
-  train_size: 1000
+  train_size: 100
   test_size: 1000
-  set_size: 3
+  set_size: 10
   data_dim: 5
   output_dim: 1
 
 architecture:
-  model_type: AugmentationNetwork
-  hidden_dim: 64
-  num_layers: 3
+  model_type: CanonizationNetwrok
+  hidden_dim: 300
+  num_layers: 6
 
 training:
   batch_size: 128
   lr: 0.001
-  epochs: 500
+  epochs: 100000
   eval_every: 100
   oot: 30
 
